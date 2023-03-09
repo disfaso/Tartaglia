@@ -24,15 +24,15 @@ line = int(input())
 
 
 # initializing variables
-coefficient = []
+coefficient = [1]
 c = 0
 
 
-while c < (line+1):
-    coefficient[c] = c
+while c < line:
+    coefficient = calculate_line(coefficient)
     c += 1
 
 
 
 
-print(coefficient.size())
+print(coefficient)
