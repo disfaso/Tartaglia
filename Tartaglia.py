@@ -1,16 +1,18 @@
 import numpy as np
 
 def calculate_line(before:list):
-    coeff = []
-    coeff.size = before.size+1
+    coeff: list
+    t = 0
+    while t < len(before)+1:
+        coeff[t] = 0
     # coeff[0] = 1
     # coeff[before.size+1] = 1
 
     for i in coeff:
-        if i == 0 or i == before.size+1:
+        if i == 0 or i == len(before)+1:
             coeff[i] = 1
 
-        elif i == 1 or i == before.size:
+        elif i == 1 or i == len(before):
             coeff[i] = 1 + before[i]
 
         else:
