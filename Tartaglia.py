@@ -1,19 +1,13 @@
-import numpy as np
-
 def calculate_line(before:list):
-    coeff: list
-    t = 0
-    while t < len(before)+1:
-        coeff[t] = 0
-    # coeff[0] = 1
-    # coeff[before.size+1] = 1
+    coeff: list = [0] * (len(before)+1)
 
-    for i in coeff:
-        if i == 0 or i == len(before)+1:
+
+    for i in range(len(coeff)):
+        if i == 0:
             coeff[i] = 1
 
-        elif i == 1 or i == len(before):
-            coeff[i] = 1 + before[i]
+        elif i == len(before):
+            coeff[i] = 1
 
         else:
             coeff[i] = before[i-1] + before[i]
@@ -25,16 +19,17 @@ print('Input the number of line of the Tartaglia triangle')
 line = int(input())
 
 
+
 # initializing variables
-coefficient = [1]
+coefficient : list = [1]
 c = 0
 
-
+# iterate from 0 to line, calculating the coefficients from the one before
 while c < line:
     coefficient = calculate_line(coefficient)
     c += 1
 
 
 
-
 print(coefficient)
+
