@@ -1,5 +1,5 @@
 def calculate_line(before:list):
-    coeff: list = [0] * (len(before)+1)
+    coeff: list = [0] * (len(before)+1+0)
 
 
     for i in range(len(coeff)):
